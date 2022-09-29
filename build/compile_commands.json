@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/hispark/Project/VideoStream_transform/build",
+  "command": "/usr/bin/c++   -I/usr/local/ffmpeg/include  -g   -o CMakeFiles/main.dir/main.cpp.o -c /home/hispark/Project/VideoStream_transform/main.cpp",
+  "file": "/home/hispark/Project/VideoStream_transform/main.cpp"
+}
+]
