@@ -1,6 +1,6 @@
 The system is: Linux - 5.4.0-42-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
+Compiler: /usr/bin/gcc 
 Build flags: 
 Id flags:  
 
@@ -13,7 +13,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 The C compiler identification is GNU, found in "/home/hispark/Project/VideoStream_transform/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/c++ 
+Compiler: /usr/bin/g++ 
 Build flags: 
 Id flags:  
 
@@ -28,30 +28,30 @@ The CXX compiler identification is GNU, found in "/home/hispark/Project/VideoStr
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_52e49/fast"
-/usr/bin/make -f CMakeFiles/cmTC_52e49.dir/build.make CMakeFiles/cmTC_52e49.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b6089/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b6089.dir/build.make CMakeFiles/cmTC_b6089.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_52e49.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_52e49.dir/testCCompiler.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_52e49
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52e49.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_52e49.dir/testCCompiler.c.o  -o cmTC_52e49 
+Building C object CMakeFiles/cmTC_b6089.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_b6089.dir/testCCompiler.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_b6089
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6089.dir/link.txt --verbose=1
+/usr/bin/gcc      CMakeFiles/cmTC_b6089.dir/testCCompiler.c.o  -o cmTC_b6089 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fcae4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fcae4.dir/build.make CMakeFiles/cmTC_fcae4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b03d7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b03d7.dir/build.make CMakeFiles/cmTC_b03d7.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_fcae4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcae4.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o  -o cmTC_fcae4 
+Building C object CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_b03d7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b03d7.dir/link.txt --verbose=1
+/usr/bin/gcc     -v CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o  -o cmTC_b03d7 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
+COLLECT_GCC=/usr/bin/gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none
 OFFLOAD_TARGET_DEFAULT=1
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcae4' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrwnItX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fcae4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcae4' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b03d7' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6g3iy6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b03d7 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b03d7' '-mtune=generic' '-march=x86-64'
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -71,16 +71,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_fcae4/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_fcae4.dir/build.make CMakeFiles/cmTC_fcae4.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_b03d7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_b03d7.dir/build.make CMakeFiles/cmTC_b03d7.dir/build]
   ignore line: [make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”]
-  ignore line: [Building C object CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_fcae4]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcae4.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o  -o cmTC_fcae4 ]
+  ignore line: [Building C object CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_b03d7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b03d7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc     -v CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o  -o cmTC_b03d7 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcae4' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrwnItX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fcae4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b03d7' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6g3iy6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b03d7 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccrwnItX.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6g3iy6.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -114,7 +114,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_fcae4] ==> ignore
+    arg [cmTC_b03d7] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -126,7 +126,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_fcae4.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_b03d7.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -158,14 +158,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a0a89/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a0a89.dir/build.make CMakeFiles/cmTC_a0a89.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d97cd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d97cd.dir/build.make CMakeFiles/cmTC_d97cd.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_a0a89.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_a0a89.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_a0a89
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0a89.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_a0a89.dir/feature_tests.c.o  -o cmTC_a0a89 
+Building C object CMakeFiles/cmTC_d97cd.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c11 -o CMakeFiles/cmTC_d97cd.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d97cd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d97cd.dir/link.txt --verbose=1
+/usr/bin/gcc      CMakeFiles/cmTC_d97cd.dir/feature_tests.c.o  -o cmTC_d97cd 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -178,14 +178,14 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0282b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0282b.dir/build.make CMakeFiles/cmTC_0282b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b2bba/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b2bba.dir/build.make CMakeFiles/cmTC_b2bba.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_0282b.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_0282b.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_0282b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0282b.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_0282b.dir/feature_tests.c.o  -o cmTC_0282b 
+Building C object CMakeFiles/cmTC_b2bba.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c99 -o CMakeFiles/cmTC_b2bba.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b2bba
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2bba.dir/link.txt --verbose=1
+/usr/bin/gcc      CMakeFiles/cmTC_b2bba.dir/feature_tests.c.o  -o cmTC_b2bba 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -198,14 +198,14 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0f771/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0f771.dir/build.make CMakeFiles/cmTC_0f771.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a33f3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a33f3.dir/build.make CMakeFiles/cmTC_a33f3.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_0f771.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_0f771.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_0f771
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f771.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_0f771.dir/feature_tests.c.o  -o cmTC_0f771 
+Building C object CMakeFiles/cmTC_a33f3.dir/feature_tests.c.o
+/usr/bin/gcc   -std=c90 -o CMakeFiles/cmTC_a33f3.dir/feature_tests.c.o   -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a33f3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a33f3.dir/link.txt --verbose=1
+/usr/bin/gcc      CMakeFiles/cmTC_a33f3.dir/feature_tests.c.o  -o cmTC_a33f3 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -216,30 +216,30 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b1247/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b1247.dir/build.make CMakeFiles/cmTC_b1247.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_94200/fast"
+/usr/bin/make -f CMakeFiles/cmTC_94200.dir/build.make CMakeFiles/cmTC_94200.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_b1247.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_b1247.dir/testCXXCompiler.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_b1247
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1247.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_b1247.dir/testCXXCompiler.cxx.o  -o cmTC_b1247 
+Building CXX object CMakeFiles/cmTC_94200.dir/testCXXCompiler.cxx.o
+/usr/bin/g++     -o CMakeFiles/cmTC_94200.dir/testCXXCompiler.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_94200
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94200.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_94200.dir/testCXXCompiler.cxx.o  -o cmTC_94200 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2e7db/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2e7db.dir/build.make CMakeFiles/cmTC_2e7db.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_752cf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_752cf.dir/build.make CMakeFiles/cmTC_752cf.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_2e7db
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e7db.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2e7db 
+Building CXX object CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/g++     -o CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_752cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_752cf.dir/link.txt --verbose=1
+/usr/bin/g++      -v CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_752cf 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/c++
+COLLECT_GCC=/usr/bin/g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none
 OFFLOAD_TARGET_DEFAULT=1
@@ -249,9 +249,9 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2e7db' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cctteYYK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2e7db /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2e7db' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_752cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJVd7Cg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_752cf /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_752cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -259,16 +259,16 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2e7db/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2e7db.dir/build.make CMakeFiles/cmTC_2e7db.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_752cf/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_752cf.dir/build.make CMakeFiles/cmTC_752cf.dir/build]
   ignore line: [make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”]
-  ignore line: [Building CXX object CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_2e7db]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e7db.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2e7db ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/g++     -o CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_752cf]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_752cf.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/g++      -v CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_752cf ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
   ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -278,13 +278,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2e7db' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cctteYYK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2e7db /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_752cf' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJVd7Cg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_752cf /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cctteYYK.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJVd7Cg.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -302,7 +302,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2e7db] ==> ignore
+    arg [cmTC_752cf] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -314,7 +314,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_2e7db.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_752cf.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -342,14 +342,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a0f6b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a0f6b.dir/build.make CMakeFiles/cmTC_a0f6b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_69cc9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69cc9.dir/build.make CMakeFiles/cmTC_69cc9.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_a0f6b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_a0f6b.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_a0f6b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0f6b.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_a0f6b.dir/feature_tests.cxx.o  -o cmTC_a0f6b 
+Building CXX object CMakeFiles/cmTC_69cc9.dir/feature_tests.cxx.o
+/usr/bin/g++    -std=c++1z -o CMakeFiles/cmTC_69cc9.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_69cc9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69cc9.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_69cc9.dir/feature_tests.cxx.o  -o cmTC_69cc9 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -415,14 +415,14 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8f26b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8f26b.dir/build.make CMakeFiles/cmTC_8f26b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_258a0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_258a0.dir/build.make CMakeFiles/cmTC_258a0.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_8f26b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_8f26b.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_8f26b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f26b.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_8f26b.dir/feature_tests.cxx.o  -o cmTC_8f26b 
+Building CXX object CMakeFiles/cmTC_258a0.dir/feature_tests.cxx.o
+/usr/bin/g++    -std=c++14 -o CMakeFiles/cmTC_258a0.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_258a0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_258a0.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_258a0.dir/feature_tests.cxx.o  -o cmTC_258a0 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -488,14 +488,14 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b2622/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b2622.dir/build.make CMakeFiles/cmTC_b2622.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6686d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6686d.dir/build.make CMakeFiles/cmTC_6686d.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_b2622.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_b2622.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b2622
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2622.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_b2622.dir/feature_tests.cxx.o  -o cmTC_b2622 
+Building CXX object CMakeFiles/cmTC_6686d.dir/feature_tests.cxx.o
+/usr/bin/g++    -std=c++11 -o CMakeFiles/cmTC_6686d.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6686d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6686d.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_6686d.dir/feature_tests.cxx.o  -o cmTC_6686d 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 
@@ -561,14 +561,14 @@ make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeF
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_53ff8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_53ff8.dir/build.make CMakeFiles/cmTC_53ff8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ad3ab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ad3ab.dir/build.make CMakeFiles/cmTC_ad3ab.dir/build
 make[1]: 进入目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
-Building CXX object CMakeFiles/cmTC_53ff8.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_53ff8.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_53ff8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53ff8.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_53ff8.dir/feature_tests.cxx.o  -o cmTC_53ff8 
+Building CXX object CMakeFiles/cmTC_ad3ab.dir/feature_tests.cxx.o
+/usr/bin/g++    -std=c++98 -o CMakeFiles/cmTC_ad3ab.dir/feature_tests.cxx.o -c /home/hispark/Project/VideoStream_transform/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ad3ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad3ab.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_ad3ab.dir/feature_tests.cxx.o  -o cmTC_ad3ab 
 make[1]: 离开目录“/home/hispark/Project/VideoStream_transform/build/CMakeFiles/CMakeTmp”
 
 

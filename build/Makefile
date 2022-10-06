@@ -123,32 +123,59 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-main.o: main.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/publish_stream.o: src/publish_stream.cpp.o
+
+.PHONY : src/publish_stream.o
+
+# target to build an object file
+src/publish_stream.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/publish_stream.cpp.o
+.PHONY : src/publish_stream.cpp.o
+
+src/publish_stream.i: src/publish_stream.cpp.i
+
+.PHONY : src/publish_stream.i
+
+# target to preprocess a source file
+src/publish_stream.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/publish_stream.cpp.i
+.PHONY : src/publish_stream.cpp.i
+
+src/publish_stream.s: src/publish_stream.cpp.s
+
+.PHONY : src/publish_stream.s
+
+# target to generate assembly for a file
+src/publish_stream.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/publish_stream.cpp.s
+.PHONY : src/publish_stream.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/publish_stream.o"
+	@echo "... src/publish_stream.i"
+	@echo "... src/publish_stream.s"
 .PHONY : help
 
 

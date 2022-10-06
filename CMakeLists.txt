@@ -1,31 +1,33 @@
-# opencv
-# cmake_minimum_required(VERSION 3.10)
-# project(VideoStream_transorm)
-# find_package(OpenCV REQUIRED)
-
-# # 添加Opencv头文件
-# include_directories(${OpenCV_INCLUDE_DIRS})
-
-# # message(STATUS "OpenCV_INCLUDE_DIRS = ${OpenCV_INCLUDE_DIRS}")
-# # message(STATUS "OpenCV_LIBS = ${OpenCV_LIBS}")
-
-# aux_source_directory(. DIR_SRCS)
-
-# add_executable(main ${DIR_SRCS})
-# # 将库文件链接到可执行程序上
-# target_link_libraries(main ${OpenCV_LIBS})
-
-
-# ffmpeg
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 project(VideoStream_transorm)
 
+#cv
+find_package(OpenCV REQUIRED)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -O3  -Wall -std=c++11")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
-include_directories("/usr/local/ffmpeg/include")
+# 在根目录下导入之后子目录下的CMakeLists.txt就不需要写了，这是为什么？
+set(ffmpeg_include_DIR /usr/local/ffmpeg/include)
+set(ffmpeg_lib_DIR /usr/local/ffmpeg/lib)
+#ffmpeg
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+    ${ffmpeg_include_DIR}
+    ${OpenCV_INCLUDE_DIRS}
+)
 
-link_directories("/usr/local/ffmpeg/lib")
+link_directories(
+    ${PROJECT_SOURCE_DIR}/lib
+    ${ffmpeg_lib_DIR}
+)
 
-aux_source_directory(. DIR_SRCS)
+# add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+
+aux_source_directory(src/ DIR_SRCS)
 
 add_executable(main ${DIR_SRCS})
+
+
+# 必须要这样写？
+target_link_libraries(main avcodec avformat avutil swresample swscale avfilter x264)
