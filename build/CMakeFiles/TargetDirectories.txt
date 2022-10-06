@@ -1,3 +1,0 @@
-/home/hispark/Project/VideoStream_transform/build/CMakeFiles/rebuild_cache.dir
-/home/hispark/Project/VideoStream_transform/build/CMakeFiles/main.dir
-/home/hispark/Project/VideoStream_transform/build/CMakeFiles/edit_cache.dir
