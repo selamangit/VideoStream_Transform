@@ -8,6 +8,8 @@ extern "C"
     #include <libavdevice/avdevice.h>
     #include <libavformat/avformat.h>
     #include <libavcodec/avcodec.h>
+    #include <libavutil/imgutils.h>
+    #include <libswscale/swscale.h>
     #include <libavutil/frame.h>
     #include <libavutil/opt.h>
     #include <libavutil/time.h>
@@ -50,7 +52,8 @@ class AVPusher
         int pushstream();
         int createinstreamdecodec();
         int createoutstreamencodec();
-
+        int decodepackettoframe(AVFrame* outframe ,AVCodecContext* decodecctx, AVPacket pkt);
+        int sendstream(AVPacket *pkt);
         int releaseobj();
 
 };

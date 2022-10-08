@@ -62,13 +62,14 @@ int AVPusher::findlocalstreaminfo(string filename)
     AVStream *pIAvSt = pIfmtCtx_->streams[videostreamindex_];
     fprintf(stdout,"createvideodecoderctx ……\n");
     pVideoDecodecCtx_ = createvideodecoderctx(pIAvSt);
-    if(pVideoDecodecCtx_ = nullptr)
+    if(pVideoDecodecCtx_ == nullptr)
     {
         releaseobj();
         fprintf(stderr,"createvideodecoderctx failed\n");
         return -1;
     }
     fprintf(stdout,"createvideodecoderctx successed\n");
+
     fprintf(stdout,"createvideoencoderctx ……\n");
     pVideoEncodecCtx_ = createvideoencoderctx(pIAvSt);
     if(pVideoEncodecCtx_ == nullptr)
@@ -174,7 +175,6 @@ AVCodecContext* AVPusher::createvideodecoderctx(AVStream *AvSt)
     }
     fprintf(stdout,"avcodec_open2 successed\n");
     return VideoDecodecCtx;
-
 }
 
 int AVPusher::connect(string dist)
@@ -183,13 +183,17 @@ int AVPusher::connect(string dist)
     // 配置输出流
     // 分配输出上下文空间
     fprintf(stdout,"avformat_alloc_output_context2 ……\n");
-    if((ret = avformat_alloc_output_context2(&pOfmtCtx_, NULL, "rtsp", dist.c_str())) < 0)
+
+    if((ret = avformat_alloc_output_context2(&pOfmtCtx_, NULL, "RTSP", dist.c_str())) < 0)
     {
         releaseobj();
         fprintf(stderr, "avformat_alloc_output_context2 failed\n");
         return -1;
     }
     fprintf(stdout,"avformat_alloc_output_context2 successed\n");
+    pOfmtCtx_->max_interleave_delta = 1000000;
+    pOfmtCtx_->max_delay = 1000000;
+
 
     // 遍历pIfmtCtx_（输入封装协议）的AVStream
     for(uint16_t i = 0; i < pIfmtCtx_->nb_streams; i++)
@@ -258,21 +262,47 @@ int AVPusher::connect(string dist)
             return -1;
         }
     }
+    else{
+		fprintf(stdout,"not !(ofmtCtx_->flags & AVFMT_NOFILE)---------\n");
+	}
+
+    char sdp[2048];
+    ret = av_sdp_create(&pOfmtCtx_,1, sdp, sizeof(sdp));
+	if(ret != 0)
+    {
+        printf("sdp:error");
+		return -1;
+    }
+	printf("SDP:\n %s\n",sdp);
+
     // 配置rtsp推流参数，配置上TCP之后RTP数据包以TCP的方式传输，可以在rtsp服务器端看到
     // 如果不指定tcp将以udp的形式推流
-    // 疑惑？？但是url_find_protocol解析出来的是tcp，难道解析出来的就是udp？
     av_dict_set(&pOfmtOpt_, "stimeout", std::to_string(2 * 1000000).c_str(), 0);
     av_dict_set(&pOfmtOpt_, "rtsp_transport", "tcp", 0);
 
+    pOfmtCtx_->video_codec_id = pOfmtCtx_->oformat->video_codec;
+
     // 写入文件头信息，此时与服务器连接起来了
+    fprintf(stdout, "avformat_write_header ……\n");
     if((ret = avformat_write_header(pOfmtCtx_, &pOfmtOpt_)) < 0)
     {
         fprintf(stderr, "avformat_write_header failed\n");
         return -1;
     }
+    fprintf(stdout, "avformat_write_header successed\n");
     isconnected_ = true;
 }
+int AVPusher::decodepackettoframe(AVFrame* outframe ,AVCodecContext* decodecctx, AVPacket pkt)
+{
+    int ret;
+    if((ret = avcodec_send_packet(decodecctx, &pkt)) != 0)
+    {
+        return ret;
+    }
 
+    ret = avcodec_receive_frame(decodecctx, outframe);
+    return ret;
+}
 
 int AVPusher::pushstream()
 {
@@ -282,61 +312,115 @@ int AVPusher::pushstream()
         return -1;
     }
     int ret;
-    uint64_t frame_index = 0;
+    // int srcH=1080,srcW=1920;
+	// int img_size = srcW*srcH;
+    // int linesize[4]={0};
+    // uint8_t* data[4];
+    // av_image_alloc(data, linesize, srcW, srcH, AV_PIX_FMT_BGR24, 1);
+	// cv::Mat img=cv::Mat(cv::Size(srcW,srcH),CV_8UC3,data[0]);
+
+    // uint64_t frame_index = 0;s
     AVPacket pkt;
+    // SwsContext *ConvertCtxYUV2BGR;
+    AVFrame *pOutFrame = av_frame_alloc();
     long long startTime = av_gettime();
     while(true)
     {
-        if((ret = av_read_frame(pIfmtCtx_, &pkt)) != 0)
+        if((ret = av_read_frame(pIfmtCtx_, &pkt)) < 0)
         {
+            fprintf(stderr, "av_read_frame failed\n");
             av_packet_unref(&pkt);
             break;
-        }
-        // 如果pkt中的是没有封装格式的裸流（例如H.264裸流）是不包含PTS、DTS这些参数的。
-        if(pkt.pts == AV_NOPTS_VALUE)
+        }        
+        // 只发送视频packet
+        if(pkt.stream_index != videostreamindex_)
         {
-            // 在发送这种数据的时候，需要自己计算并写入AVPacket的PTS，DTS，duration等参数。
-            // 配置输入的封装格式的tb作为输出的tb
-            AVRational tb = pIfmtCtx_->streams[videostreamindex_]->time_base;
-            int64_t duration = (double)AV_TIME_BASE/av_q2d(pIfmtCtx_->streams[videostreamindex_]->r_frame_rate);
-
+            av_packet_unref(&pkt);
+            continue;
         }
-        // pts dts是什么
-        // cout<<pkt.pts<<" "<<flush;
+        // 从输入的封装格式的packet中解码出原数据（YUV420）
+        // if(pVideoDecodecCtx_ == nullptr)
+        // {
+        //     cout<<"1234"<<endl;
+        //     return 0;
+        // }
+        ret = decodepackettoframe(pOutFrame, pVideoDecodecCtx_, pkt);
 
-        // 计算转换pts dts
-        
-        AVRational itime = pIfmtCtx_->streams[pkt.stream_index]->time_base;
-        AVRational otime = pOfmtCtx_->streams[pkt.stream_index]->time_base;
-        // 不同封装格式具有不同的时间基，在转封装(将一种封装格式转换为另一种封装格式)过程中，时间基转换
-        pkt.pts = av_rescale_q_rnd(pkt.pts, itime, otime, (AVRounding)(AV_ROUND_NEAR_INF | AV_ROUND_PASS_MINMAX));
-        pkt.dts = av_rescale_q_rnd(pkt.dts, itime, otime, (AVRounding)(AV_ROUND_NEAR_INF | AV_ROUND_PASS_MINMAX));
-        pkt.duration = av_rescale_q(pkt.duration, itime, otime);
-        pkt.pos = -1;
-        
-        // 视频帧推送速度
-        if(pIfmtCtx_->streams[pkt.stream_index]->codecpar->codec_type = AVMEDIA_TYPE_VIDEO)
+        av_packet_unref(&pkt);
+        if(ret != 0)
         {
-            AVRational tb = pIfmtCtx_->streams[pkt.stream_index]->time_base;
-            // 已经过去的时间
-            long long now = av_gettime() - startTime;
-            long long dts = 0;
-            dts = pkt.dts * (1000 * 1000 * r2d(tb));
-            if (dts > now)
-				av_usleep(dts - now);
+            continue;
         }
+        // sws_scale(ConvertCtxYUV2BGR, (uint8_t const * const *)pOutFrame->data, pOutFrame->linesize, 0, srcH, data, linesize);
 
-        // 推送帧数据，多个流需要av_interleaved_write_frame
-        if((ret = av_interleaved_write_frame(pOfmtCtx_, &pkt)) < 0)
+        // 编码frame发送packet
+        AVPacket *sendpkt;
+        sendpkt = av_packet_alloc();
+        ret = avcodec_send_frame(pVideoEncodecCtx_, pOutFrame);
+        if(ret == 0)
         {
-            fprintf(stderr, "av_interleaved_write_frame failed\n");
-        }
+            while(avcodec_receive_packet(pVideoEncodecCtx_, sendpkt) >= 0)
+            {
 
+                ret = sendstream(sendpkt);
+            }
+        }
+        av_packet_free(&sendpkt);
     }
     fprintf(stdout, "pushstream done\n");
     return 0;
 }
+int calculatepts()
+{
+    // cout<<"pkt.pts:"<<pkt.pts<<endl;
+    // // 如果pkt中的是没有封装格式的裸流（例如H.264裸流）是不包含PTS、DTS这些参数的。
+    // if(pkt.pts == AV_NOPTS_VALUE)
+    // {
+    //     // 在发送这种数据的时候，需要自己计算并写入AVPacket的PTS，DTS，duration等参数。
+    //     // 配置输入的封装格式的tb作为输出的tb
+    //     AVRational tb = pIfmtCtx_->streams[videostreamindex_]->time_base;
+    //     int64_t duration = (double)AV_TIME_BASE/av_q2d(pIfmtCtx_->streams[videostreamindex_]->r_frame_rate);
 
+    // }
+    // // pts dts是什么
+    // // cout<<pkt.pts<<" "<<flush;
+
+    // // 计算转换pts dts
+
+    // AVRational itime = pIfmtCtx_->streams[pkt.stream_index]->time_base;
+    // AVRational otime = pOfmtCtx_->streams[pkt.stream_index]->time_base;
+    // // 不同封装格式具有不同的时间基，在转封装(将一种封装格式转换为另一种封装格式)过程中，时间基转换
+    // pkt.pts = av_rescale_q_rnd(pkt.pts, itime, otime, (AVRounding)(AV_ROUND_NEAR_INF | AV_ROUND_PASS_MINMAX));
+    // pkt.dts = av_rescale_q_rnd(pkt.dts, itime, otime, (AVRounding)(AV_ROUND_NEAR_INF | AV_ROUND_PASS_MINMAX));
+    // pkt.duration = av_rescale_q(pkt.duration, itime, otime);
+    // pkt.pos = -1;
+
+    // // 视频帧推送速度
+    // if(pIfmtCtx_->streams[pkt.stream_index]->codecpar->codec_type = AVMEDIA_TYPE_VIDEO)
+    // {
+    //     AVRational tb = pIfmtCtx_->streams[pkt.stream_index]->time_base;
+    //     // 已经过去的时间
+    //     long long now = av_gettime() - startTime;
+    //     long long dts = 0;
+    //     dts = pkt.dts * (1000 * 1000 * r2d(tb));
+    //     if (dts > now)
+    //         av_usleep(dts - now);
+    // }
+}
+int AVPusher::sendstream(AVPacket *pkt)
+{
+    // 推送帧数据，多个流需要av_interleaved_write_frame
+    // cout<<"1234"<<endl;
+    if(pOfmtCtx_ ==nullptr)
+    {
+        return -1;
+    }
+    if(av_interleaved_write_frame(pOfmtCtx_, pkt))
+    {
+        return 0;
+    }
+
+}
 int AVPusher::releaseobj()
 {
     if(pIfmtCtx_ != nullptr)

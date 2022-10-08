@@ -11,7 +11,7 @@ int main()
     // av_register_all();(弃用已久)
     avformat_network_init();
 
-    if((ret = avpusher_->findlocalstreaminfo(FILE_NAME1)) < 0)
+    if((ret = avpusher_->findlocalstreaminfo(FILE_NAME)) < 0)
     {
         delete avpusher_;
         fprintf(stderr,"findlocalstreaminfo failed!");
